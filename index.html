@@ -26,9 +26,14 @@
         
         
         $.ajax({
-            url: 'https://us.api.blizzard.com/data/wow/playable-class/index?namespace=static-us&locale=en_US&=&access_token=USoMEz8a7oGNb0AwsJtwoZWba3hR2NUwCO',
+            url: 'https://us.api.blizzard.com/data/wow/playable-class/index',
             method: "GET",
-           error: function(error){console.log(error)},
+            data: {
+                namespace: "static-us",
+                locale: "en_US",
+                access_token: "USoMEz8a7oGNb0AwsJtwoZWba3hR2NUwCO"
+            },
+            error: function(error){console.log(error)},
             success: function(gameData) {
                 console.log(gameData)
             }
